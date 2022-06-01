@@ -1,0 +1,11 @@
+spec_version: 0.1.4
+indicators:
+  host_cpu: metricSelector=builtin:host.cpu.usage:splitBy():avg:names
+  host_disk_queue: metricSelector=builtin:host.disk.queueLength:splitBy():avg:names
+  host_mem: metricSelector=builtin:host.mem.usage:splitBy():avg:names
+  process_cpu: entitySelector=type(PROCESS_GROUP_INSTANCE),tag("keptn_stage:dev")&metricSelector=builtin:tech.generic.cpu.usage:splitBy():avg:names
+  process_memory: metricSelector=builtin:tech.generic.mem.usage:splitBy():avg:names
+  svc_fr: entitySelector=type(SERVICE),tag("keptn_stage:dev")&metricSelector=builtin:service.errors.server.rate:splitBy():avg:names
+  svc_rt_p50: entitySelector=type(SERVICE),tag("keptn_stage:dev")&metricSelector=builtin:service.response.time:splitBy():median:names
+  svc_rt_p90: entitySelector=type(SERVICE),tag("keptn_stage:dev")&metricSelector=builtin:service.response.time:splitBy():percentile(90):names
+  svc_rt_p95: entitySelector=type(SERVICE),tag("keptn_stage:dev")&metricSelector=builtin:service.response.time:splitBy():percentile(90):names
